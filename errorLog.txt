@@ -1,0 +1,8 @@
+error_log('mesnaje', (0, 1, 2 ,3 4), $SERVER['DOCUMENT_ROOT'] . '/errores.log')
+
+##el segundo paramentro a elefgir el numero:
+0	message es enviado al registro del sistema de PHP, usando el mecanismo de registro del Sistema Operativo o un fichero, dependiendo de qué directiva de configuración esté establecida en error_log. Esta opción es la predeterminada.
+1	message es enviado por email a la dirección del parámetro destination. Este es el único tipo de mensaje donde se usa el cuarto parámetro extra_headers.
+2	Ya no es una opción.
+3	message es añadido al final del fichero destination. No se añade automáticamente una nueva línea al final del string message.
+4	message es enviado directamente al gestor de registro de la SAPI.
