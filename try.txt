@@ -1,0 +1,13 @@
+try{
+  .....
+  throw new Exception('....');
+}catch(\Throwable $th){
+
+    $th->getMessage()->mensaje de excepciom
+    $th->getCode()->codigo de excepcion
+    $th->getFile()->nombre del archivo fuente
+    $th->getLine()->linea fuente
+    $th->getTrace()->un array de backtrace()
+    $th->getPrevious()->excepcion anterior
+    $th->getTraceAsString()->string formateado del seguimiento de origen
+}
