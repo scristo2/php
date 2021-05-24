@@ -1,0 +1,6 @@
+<?php
+
+if(mysqli_ping(){
+    
+    echo "la conexion con el servidor esta abierta";
+}
