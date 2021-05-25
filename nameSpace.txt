@@ -1,0 +1,28 @@
+#main.php
+
+<?php
+require $_SERVER['DOCUMENT_ROOT'] . "/public_html/test.php";
+use robot\persona as per;
+
+$aa = new per('jaj');
+$aa->saludar();
+
+
+#test.php
+<?php 
+namespace robot;
+
+class persona{
+
+     function __construct($nombre){
+
+           $this->nombre = $nombre;
+         
+     }
+
+
+     public function saludar(){
+
+         echo $this->nombre;
+     }
+}
