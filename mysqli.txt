@@ -1,0 +1,28 @@
+error_reporting(0);//dont display users the error
+$hostname = 'localhost';
+$username ='root';
+$password = 'root';
+$database = 'website';
+
+$connect = new mysqli($hostname, $username, $password, $database);
+
+if($connect->connect_errno){ ##errno porque es el error de la ultima llamada;
+
+    echo $connect->connect_error;
+
+}else{
+
+    $aa = "CREATEsss TABLE IF NOT EXISTS `prueba` (`id` INT(9)))";
+
+    if($connect->query($aa)){
+
+        echo "tabla creada correctamente";
+    
+    }else{
+
+        echo "el error es : " .$connect->error;
+    }
+}
+
+$connect->close(); //siempre cerrrar aunque las credenciales esten mal
+exit();
