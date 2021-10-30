@@ -1,0 +1,22 @@
+#por ejemplo cuando lo haces con una petcion xmlhttrequest desde javascript
+try{
+    
+
+     $conn = new mysqli($hostname, $usernameHostname, $passwordHostname, $databaseName);
+
+     if($conn->connect_errno){
+
+         throw new Exception($conn->connect_error);
+     }
+
+     echo "estas conectado";
+    
+}catch(\Throwable $th){
+     
+     http_response_code(403); //forze error because the client can not  connect with the database <<<<<<<<<<<<<<<<<<<< !important
+
+}finally{
+
+     $conn->close();
+
+}
