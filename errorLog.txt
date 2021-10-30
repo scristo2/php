@@ -6,3 +6,9 @@ error_log('mesnaje', (0, 1, 2 ,3 4), $SERVER['DOCUMENT_ROOT'] . '/errores.log')
 2	Ya no es una opción.
 3	message es añadido al final del fichero destination. No se añade automáticamente una nueva línea al final del string message.
 4	message es enviado directamente al gestor de registro de la SAPI.
+
+
+//envio automaico de email con el error;
+error_log("esto es un error de prueba \r\n", 1, "javier235hj@hotmail.com", "Subject: Error en la actualizacion del los clientes activo\nFrom: webmaster@web.com");
+//crea archivo en la ruta que le pongas con el mensaje
+error_log('mesnaje\r\n', 3, $SERVER['DOCUMENT_ROOT'] . './errores.log')
