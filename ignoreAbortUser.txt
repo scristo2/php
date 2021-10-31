@@ -1,0 +1,1 @@
+ignore_user_abort(1); //1 true or 0 false, si es true se ejecutara igual
