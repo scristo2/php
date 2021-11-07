@@ -29,7 +29,7 @@ $connect->close(); //siempre cerrrar aunque las credenciales esten mal
 exit();
 
 
-<---------
+<--------- esto es la buena
 
 <?php 
 error_reporting(0);
@@ -57,7 +57,11 @@ try{
 
 }finally{
 
-    $connect->close();
+   if(!$conn->connect_error){
+       $connect->close();
+   }
+   
+   ##si no se conecta y la cierras lanza un error ya que no se puede cerrar algo que no se ha abierto,por eso del if
     
 }
 
