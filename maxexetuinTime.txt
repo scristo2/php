@@ -1,0 +1,11 @@
+<?php
+##si pasa del tiempo de ejecucuin el script,lanza un error, se puede hacer de loas dos maneras:
+//ini_set('max_execution_time', '7'); <<1ºmanera
+set_time_limit(4);<<2ºmanera
+echo ini_get('max_execution_time');
+
+for ($i=0; $i < 10; $i++) { 
+      
+       echo $i . "<br>";
+       sleep(1);
+}
