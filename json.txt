@@ -1,0 +1,17 @@
+{
+
+    "index" : {
+
+         "title" : {
+
+             "es" : "español",
+             "en" : "english"
+         }
+    }
+}
+------si se pusieran [], es con numeros[#]
+<?php
+$aa = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/language.json");
+$result = json_decode($aa);
+echo $result->index->title->es; <<<< español
+?>
