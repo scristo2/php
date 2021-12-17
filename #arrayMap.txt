@@ -1,0 +1,7 @@
+<?php
+ function lower($word){
+     return strtoupper($word);
+    };
+ $array = ['hola', "me llamo sergio"];
+ $result = array_map('lower', $array);
+ var_dump($result); <<<<< ["HOLA", "ME LLAMO SERGIO"]
