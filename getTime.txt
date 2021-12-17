@@ -3,7 +3,7 @@ function getTime(){
         date_default_timezone_set('Europe/Madrid');
 
         $hour = date('H');
-        $minute = date('m');
+        $minute = date('i');
         $second = date('s');
 
         $day = date('d');
