@@ -1,4 +1,4 @@
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: *') oo header('Access-Control-Allow-Origin: http://localhost:3001{mi dominio}');;
 header("Content-Type: application/json");
 $aa = array('index' => 23);
 echo json_encode($aa);
