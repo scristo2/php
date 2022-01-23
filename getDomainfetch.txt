@@ -1,0 +1,5 @@
+if(!preg_match("/https:\/\/leagueoflegendspremium.com\//", strval($_SERVER['HTTP_REFERER']))){ >>>> http_referer te da el dominio desde que se esta haciendo, si te metes norml te da null
+
+                    throw new Exception("No se ha podido enviar el email  porque han intentado hacer un post desde otro dominio:" . $_SERVER['HTTP_REFERER'] . PHP_EOL . 
+                    "en la fecha" . PHP_EOL . self::getDate()['complete']);
+            }   
