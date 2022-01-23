@@ -2,3 +2,8 @@ header('Access-Control-Allow-Origin: *') oo header('Access-Control-Allow-Origin:
 header("Content-Type: application/json");
 $aa = array('index' => 23);
 echo json_encode($aa);
+
+<<<header('Access-Control-Allow-Origin: *'); ###esta es mas completa,recoradr que esto es que si pones un dominio y no coincide bloquea la respuesta,pero si ejecuta el php,
+pero el cliente (navegador) no recibe la respuest asi no coincide
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
