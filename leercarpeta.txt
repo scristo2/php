@@ -1,0 +1,4 @@
+$directory = $_SERVER['DOCUMENT_ROOT'] . "/database/users";
+$scanned_directory = scandir($directory);
+array_splice($scanned_directory, 0, 2); ## con esto ela rray empieza de nuevo sin los ..
+print_r($scanned_directory[1]);
