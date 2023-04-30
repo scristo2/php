@@ -1,7 +1,7 @@
 @añadimos esto al htaccess par tener esta variable
 RewriteEngine On
 RewriteRule .* - [e=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
+##muy importtante que en el bearer no poner la ñ ejemplo "Bearer sssjpsjpsjspsjss2344"
 $bearer =  $_SERVER['HTTP_AUTHORIZATION'];
 
 
