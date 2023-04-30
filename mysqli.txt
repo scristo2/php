@@ -68,3 +68,74 @@ try{
 
 ###reset id autoincremennt
  $sql = "ALTER TABLE `activedClients` AUTO_INCREMENT = 1";
+ 
+ 
+ ###desde next js una api que devuelve en array los datos del mysql
+ <?php
+ob_start();
+header('Access-Control-Allow-Origin: *');
+header("Content-Type: application/json");
+header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Connection: close");
+error_reporting(0);
+require $_SERVER["DOCUMENT_ROOT"] . "/src/lib/database.php";
+require $_SERVER["DOCUMENT_ROOT"] . "/src/env.php";
+
+
+
+$connectorDatabase = new Database(hostameDatabase, usernameDatabase, passwordDatabase, "reviews");
+
+$status = "";
+$message = "";
+$reviews = "";
+
+try {
+
+    $mysqli = $connectorDatabase->connectDatabase();
+
+    if ($mysqli->connect_errno) {
+
+        throw new Exception($mysqli->connect_error);
+    }
+
+    if ($query = $mysqli ->query("SELECT * FROM `comments`")){
+
+        if($query->num_rows > 0){
+            
+            $reviews = $query->fetch_all(MYSQLI_ASSOC);
+
+        
+        }else{
+
+             throw new Exception("no hay resultados de los reviews");
+        }
+    
+    }else{
+
+        throw new Exception($mysqli->error);
+    }
+
+        $status = "ok";
+
+} catch (\Throwable $th) {
+
+    $status = "error";
+    $message =  $th->getMessage();
+} finally {
+
+    $connectorDatabase->closeDatabase($mysqli);
+}
+
+
+$output = array("data" => array("status" => $status, "message" => $message, "reviews" => $reviews));
+echo json_encode($output);
+
+$result = ob_get_contents();
+ob_end_clean();
+
+
+echo $result;
