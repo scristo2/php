@@ -9,3 +9,4 @@ luego compararramos con un if si bearers son igual desde el fecth que se ha envi
 
 const res = await axios.get(`${process.env.URL_GETREVIEWS}`, {headers : {Authorization : `Bearer ${process.env.BEARER_NAMEQUEQUIERAS}`}})
  
+ 
